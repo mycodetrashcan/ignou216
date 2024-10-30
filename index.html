@@ -1,0 +1,95 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hostel Room Booking</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Hostel Room Booking</h2>
+      <form id="bookingForm" onsubmit="return validateForm(event)">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" />
+          <span class="error" id="firstNameError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" />
+          <span class="error" id="lastNameError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" />
+          <span class="error" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="arrivalDate">Arrival Date</label>
+          <input type="date" id="arrivalDate" name="arrivalDate" />
+          <span class="error" id="arrivalDateError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="departureDate">Departure Date</label>
+          <input type="date" id="departureDate" name="departureDate" />
+          <span class="error" id="departureDateError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="">Select your country</option>
+            <option value="USA">United States</option>
+            <option value="UK">United Kingdom</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+            <option value="India">India</option>
+            <option value="Germany">Germany</option>
+            <option value="France">France</option>
+            <option value="Japan">Japan</option>
+            <option value="China">China</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="error" id="countryError"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Payment Mode</label>
+          <div class="payment-options">
+            <div class="checkbox-group">
+              <input
+                type="radio"
+                id="debitCard"
+                name="paymentMode"
+                value="debit"
+              />
+              <label for="debitCard">Debit Card</label>
+            </div>
+            <div class="checkbox-group">
+              <input
+                type="radio"
+                id="creditCard"
+                name="paymentMode"
+                value="credit"
+              />
+              <label for="creditCard">Credit Card</label>
+            </div>
+          </div>
+          <span class="error" id="paymentError"></span>
+        </div>
+
+        <div class="button-group">
+          <button type="submit">Submit</button>
+          <button type="button" onclick="resetForm()">Reset</button>
+        </div>
+
+        <div id="successMessage" class="success-message"></div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
